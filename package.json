@@ -1,0 +1,35 @@
+{
+  "name": "tape-network",
+  "version": "0.1.0",
+  "description": "Tape Network node: a sovereign, decentralized network for music metadata search and discovery over Iroh. Metadata only — never audio.",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": { "tape-network": "dist/cli.js" },
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
+    "./protocol": { "types": "./dist/protocol/index.d.ts", "import": "./dist/protocol/index.js" }
+  },
+  "files": ["dist", "spec", "README.md", "LICENSE"],
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --import tsx --test test/*.test.ts",
+    "start": "node dist/cli.js serve",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "keywords": ["music", "metadata", "discovery", "p2p", "iroh", "nostr", "decentralized", "musicbrainz"],
+  "dependencies": {
+    "@momics/iroh-http-node": "^0.6.1",
+    "@noble/ciphers": "^1.3.0",
+    "@noble/curves": "^1.9.7",
+    "@noble/hashes": "^1.8.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}

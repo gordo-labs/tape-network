@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Example Song",
+    "artist": "Example Artist",
+    "album": "Example Album",
+    "year": 2001,
+    "genre": "House",
+    "bpm": 124,
+    "musicalKey": "Am",
+    "label": "Example Label",
+    "identities": [
+      { "type": "musicbrainz-recording", "value": "0f6cd1a6-6b6c-4d0b-9a3e-4f6a8e0b1c2d" },
+      { "type": "isrc", "value": "USRC17607839" }
+    ]
+  },
+  {
+    "title": "Another Example",
+    "artist": "Example Artist",
+    "genre": "House",
+    "identities": []
+  }
+]
